@@ -1,8 +1,8 @@
-import React, {Suspense } from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./LoginPage";
-import StudentPage from "./StudentPage";
-import NotesPage from "./NotesPage"
+import LoginPage from "./pages/LoginPage";
+import StudentPage from "./pages/StudentPage";
+import NotesPage from "./pages/NotesPage";
 function App() {
   return (
     <>

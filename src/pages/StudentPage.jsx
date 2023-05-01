@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "./Context";
-import notesimage from "./notes.svg";
-import com from "./complaint.svg";
-import folder from "./folder.svg";
+import { AppContext } from "../Context";
+import notesimage from "../images/notes.svg";
+import com from "../images/complaint.svg";
+import folder from "../images/folder.svg";
 const StudentPage = () => {
   const navigate = useNavigate();
   const { name } = useContext(AppContext);
