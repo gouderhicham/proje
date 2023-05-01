@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { AppContext } from "./Context";
 import { useNavigate } from "react-router-dom";
 const LoginPage = () => {
-  const { name } = useContext(AppContext);
+  const { name , setName  } = useContext(AppContext);
   const navigate = useNavigate();
   function submit(e) {
     e.preventDefault();
     //NOTE: after submite must check if user exist in the database if yes then redirect to /student/${id}`
     navigate(`/student/${name}`);
   }
+  
   return (
     <div className="login-page">
       <div className="background">
@@ -19,16 +20,18 @@ const LoginPage = () => {
         <h3>Login Here</h3>
 
         <label htmlFor="username">ID</label>
-        <input type="text" placeholder="Email or Phone" id="username" />
+        <input type="text" onChange={(e)=> {
+          setName(e.target.value)
+        }} id="username" />
 
         <label htmlFor="password">Password</label>
         <input type="password" placeholder="Password" id="password" />
 
         <button type="submit">Log In</button>
         <div className="social">
-          <div className="go">
-            <i className="fab fa-google"></i> Log in as Teacher
-          </div>
+          <p >
+            Log in as Teacher
+          </p>
         </div>
       </form>
     </div>

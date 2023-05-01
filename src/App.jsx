@@ -1,7 +1,8 @@
-import React, { useEffect, Suspense } from "react";
+import React, {Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import StudentPage from "./StudentPage";
+import NotesPage from "./NotesPage"
 function App() {
   return (
     <>
@@ -22,6 +23,14 @@ function App() {
               element={
                 <Suspense fallback={<div>loading</div>}>
                   <StudentPage />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/student/:id/notes"
+              element={
+                <Suspense fallback={<div>loading</div>}>
+                  <NotesPage />
                 </Suspense>
               }
             />
